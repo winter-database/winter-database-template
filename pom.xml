@@ -6,7 +6,7 @@
 
     <groupId>io.github.winter-database</groupId>
     <artifactId>winter-database-template</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <name>template</name>
     <description>ORM</description>
     <url>https://github.com/winter-database/winter-database-template</url>
@@ -37,8 +37,8 @@
     <properties>
         <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <winter-database-table.version>1.0.1</winter-database-table.version>
-        <winter-database-executor.version>1.0.1</winter-database-executor.version>
+        <winter-database-table.version>1.0.2</winter-database-table.version>
+        <winter-database-executor.version>1.0.2</winter-database-executor.version>
         <central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
