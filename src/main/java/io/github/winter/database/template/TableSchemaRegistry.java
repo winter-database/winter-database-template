@@ -2,8 +2,10 @@ package io.github.winter.database.template;
 
 import io.github.winter.boot.sql.Preconditions;
 import io.github.winter.database.table.TableSchema;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -18,6 +20,16 @@ public final class TableSchemaRegistry {
     private static final Map<String, TableSchema> DATA = new ConcurrentHashMap<>();
 
     private TableSchemaRegistry() {
+    }
+
+    /**
+     * Get Table Name
+     *
+     * @return [ Table Name ]
+     */
+    @NotNull
+    public static Set<String> getTableNames() {
+        return DATA.keySet();
     }
 
     /**

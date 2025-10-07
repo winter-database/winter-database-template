@@ -17,6 +17,8 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Objects;
+import java.util.function.Predicate;
 
 /**
  * 刷表概要
@@ -112,9 +114,37 @@ public class RefreshTableSchemaListener implements ApplicationListener<RefreshTa
             return;
         }
 
+        removeAll(tableNames);
+
         for (String tableName : tableNames) {
             if (tableName != null) {
                 doRefresh(connection, tableName);
+            }
+        }
+    }
+
+    /**
+     * Remove All
+     *
+     * @param tableNames [ Table Name ]
+     */
+    public void removeAll(List<String> tableNames) {
+        if (tableNames == null) {
+            return;
+        }
+
+        List<String> removeTableNames = TableSchemaRegistry.getTableNames()
+                .stream()
+                .filter(Objects::nonNull)
+                .filter(Predicate.not(tableNames::contains))
+                .toList();
+        if (removeTableNames.isEmpty()) {
+            return;
+        }
+
+        for (String tableName : removeTableNames) {
+            if (tableName != null) {
+                TableSchemaRegistry.remove(tableName);
             }
         }
     }

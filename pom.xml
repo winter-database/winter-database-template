@@ -6,7 +6,7 @@
 
     <groupId>io.github.winter-database</groupId>
     <artifactId>winter-database-template</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <name>template</name>
     <description>ORM</description>
     <url>https://github.com/winter-database/winter-database-template</url>
